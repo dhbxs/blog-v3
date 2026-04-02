@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { ArticleProps } from '~/types/article'
 
+const route = useRoute()
+
 defineOptions({ inheritAttrs: false })
 defineProps<ArticleProps>()
 
@@ -9,6 +11,12 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
 }>({ inheritAttrs: false })
 
 const appConfig = useAppConfig()
+
+const permalink = computed(() => {
+	const base = appConfig.url?.endsWith('/') ? appConfig.url.slice(0, -1) : appConfig.url
+	const path = route.path.startsWith('/') ? route.path : `/${route.path}`
+	return `${base}${path}`
+})
 </script>
 
 <template>
@@ -38,10 +46,17 @@ const appConfig = useAppConfig()
 	<ReuseTemplate :title="meta?.slots?.copyright?.props?.title as string || '许可协议'">
 		<ContentRenderer v-if="meta?.slots?.copyright" :value="meta?.slots?.copyright" />
 		<p v-else>
-			本文采用 <ProseA :href="appConfig.copyright.url">
+			本文采用 
+			<ProseA :href="appConfig.copyright.url">
 				{{ appConfig.copyright.name }}
 			</ProseA>
-			许可协议，转载请注明出处。
+			许可协议，转载请注明来自
+			<Badge :link="appConfig.url" :text="appConfig.title" :img="appConfig.favicon" round />
+		</p>
+		<p>
+			本文永久链接: <ProseA :href="permalink">
+				{{ permalink }}
+			</ProseA>
 		</p>
 	</ReuseTemplate>
 </div>
