@@ -7,6 +7,7 @@ image: https://file.dhbxs.top/2025/11/hhaqfien.webp
 permalink: /posts/4c27c0e
 categories: [开发]
 tags: [AI应用开发,LLM,LangChain4j]
+recommend: true
 ---
 
 ## 背景
