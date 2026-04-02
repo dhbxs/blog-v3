@@ -157,6 +157,7 @@ const frontmatter = {
 	type: type === 'tech' ? undefined : type,
 	categories: category === blogConfig.defaultCategory ? undefined : `[${category}]`,
 	tags: tags ? `[${tags.join(', ')}]` : undefined,
+	recommend: false
 	// draft: 'true # 撰写完成后，请删除此行',
 }
 // #endregion
