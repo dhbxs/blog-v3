@@ -7,7 +7,7 @@ image: https://file.dhbxs.top/2025/10/ioyknzke.png
 permalink: /posts/d06540f2
 categories: [技术]
 tags: [Hadoop, 大数据与云计算]
-recommend: true
+recommend: 1
 ---
 
 > 📌 耗时将近 1 天，终于搭好了 Hadoop 集群，现做教程分享出来。
