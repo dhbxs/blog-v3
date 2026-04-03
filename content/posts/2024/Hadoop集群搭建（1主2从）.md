@@ -171,7 +171,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 ![](https://file.dhbxs.top/2025/10/brglpyuu.png)
 ![](https://file.dhbxs.top/2025/10/fznqyrjl.png)
 3）将 3 台虚拟机依次启动，然后修改 ip 先进入 s1 虚拟机，然后输入以下命令，编辑网络配置文件：`vim /etc/sysconfig/network-scripts/ifcfg-ens33`将其 ip 设置为 `192.168.141.7` ，保存后，输入 `service network restart` 使配置生效。
-![](https://file.dhbxs.top/2025/10/ylsrukma.png)同样的命令配置好 s2，配置其 ip 地址为 `192.168.141.8` ，然后保存，输入命令使配置生效。这里的 ip 地址与安装 Linux 系统时拍照记录的 ip 地址有关，前面的 `192.168.141` 与装系统时的 ip 地址完全一致，后面一位和上文[配置 centos7](about:blank#%E9%85%8D%E7%BD%AE-CentOS-7)里的第 8 小步一致，配置的 hosts 文件保持一致。
+![](https://file.dhbxs.top/2025/10/ylsrukma.png)同样的命令配置好 s2，配置其 ip 地址为 `192.168.141.8` ，然后保存，输入命令使配置生效。这里的 ip 地址与安装 Linux 系统时拍照记录的 ip 地址有关，前面的 `192.168.141` 与装系统时的 ip 地址完全一致，后面一位和上文[配置 centos7](#配置-CentOS-7)里的第 8 小步一致，配置的 hosts 文件保持一致。
 4）接下来修改主机名，输入以下命令：S1: `hostnamectl set-hostname s1`S2: `hostnamectl set-hostname s2`完成后分别在 s1，s2 做用户登出，输入命令：`logout`然后再输入用户名 root，密码，登入系统，这时会看到如下图所示位置已经变成了 `root@s1`，s2。说明主机名修改成功。
 ![](https://file.dhbxs.top/2025/10/wsufvtbi.png)
 5）分别测试是否能 ping 通在 `master` 主机上分别输入以下命令：
