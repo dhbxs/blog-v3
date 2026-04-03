@@ -1,0 +1,33 @@
+content:
+  - name: posts
+    label: "文章"
+    type: collection
+    path: content/posts
+    # 是否支持子文件夹
+    subfolders: true
+    # 文件命名规则
+    filename: "{slug}.md"
+    # 字段列表
+    fields:
+      - { name: title, label: "标题", type: string, required: true }
+      - { name: description, label: "描述", type: text, required: false }
+      - { name: date, label: "发布日期", type: date }
+      - { name: updated, label: "更新日期", type: date, required: false }
+      - { name: image, label: "封面", type: image, options: {media: posts}, required: false }
+      - { name: categories, label: "分类", type: string, list: true, required: false }
+      - { name: tags, label: "标签", type: string, list: true, required: false }
+      - { name: permalink, label: "永久链接", type: string, required: true, default: "/posts/" }
+      - { name: recommend, label: "精选文章", type: boolean, required: true, default: false }
+      - { name: body, label: Body, type: rich-text, required: true }
+      
+  - name: blog-config
+    label: "站点设置-blog.config"
+    type: file
+    path: blog.config.ts
+    format: code
+    
+  - name: app-config
+    label: "站点设置-app.config"
+    type: file
+    path: app/app.config.ts
+    format: code
