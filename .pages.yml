@@ -16,7 +16,8 @@ content:
       - { name: image, label: "封面", type: string, required: false }
       - { name: categories, label: "分类", type: string, list: true, required: false }
       - { name: tags, label: "标签", type: string, list: true, required: false }
-      - { name: permalink, label: "永久链接", type: uuid, options: {editable: true, generate: true}, required: true, default: "/posts/" }
+      - { name: permalink, label: "永久链接", type: string, required: true, default: "/posts/" }
+      - { name: uuid, label: "UUID", type: uuid, options: {editable: true, generate: true}}
       - { name: recommend, label: "精选文章", type: boolean, required: true, default: false }
       - { name: body, label: Body, type: rich-text, required: true }
 
