@@ -4,14 +4,14 @@ import Autoplay from 'embla-carousel-autoplay'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
-defineProps<{ list: ArticleProps[] }>()
+const props = defineProps<{ list: ArticleProps[] }>()
 
 const appConfig = useAppConfig()
 const compConf = computed(() => appConfig.component.slide)
 
 // @keep-sorted
 const [carouselEl, carouselApi] = emblaCarouselVue({
-	containScroll: false,
+	containScroll: true,
 	loop: true,
 	skipSnaps: true,
 }, [
