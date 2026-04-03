@@ -6,7 +6,7 @@ content:
     # 是否支持子文件夹
     subfolders: true
     # 文件命名规则
-    filename: "{slug}.md"
+    filename: "{title}.md"
     # 字段列表
     fields:
       - { name: title, label: "标题", type: string, required: true }
