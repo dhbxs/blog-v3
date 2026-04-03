@@ -18,7 +18,7 @@ content:
       - { name: tags, label: "标签", type: string, list: true, required: false }
       - { name: permalink, label: "永久链接", type: string, required: true, default: "/posts/" }
       - { name: uuid, label: "UUID", type: uuid, options: {editable: true, generate: true}}
-      - { name: recommend, label: "精选文章", type: boolean, required: true, default: false }
+      - { name: recommend, label: "精选文章", type: number, required: false, default: 0 }
       - { name: body, label: Body, type: rich-text, required: true }
 
   - name: friends
