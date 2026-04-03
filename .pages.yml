@@ -13,10 +13,10 @@ content:
       - { name: description, label: "描述", type: text, required: false }
       - { name: date, label: "发布日期", type: date }
       - { name: updated, label: "更新日期", type: date, required: false }
-      - { name: image, label: "封面", type: image, options: {media: posts}, required: false }
+      - { name: image, label: "封面", type: string, required: false }
       - { name: categories, label: "分类", type: string, list: true, required: false }
       - { name: tags, label: "标签", type: string, list: true, required: false }
-      - { name: permalink, label: "永久链接", type: string, required: true, default: "/posts/" }
+      - { name: permalink, label: "永久链接", type: uuid, options: {editable: true, generate: true}, required: true, default: "/posts/" }
       - { name: recommend, label: "精选文章", type: boolean, required: true, default: false }
       - { name: body, label: Body, type: rich-text, required: true }
 
@@ -24,6 +24,12 @@ content:
     label: "友链"
     type: file
     path: app/feeds.ts
+    format: code
+
+  - name: friends-tip
+    label: "申请友链"
+    type: file
+    path: content/link.md
     format: code
       
   - name: blog-config
