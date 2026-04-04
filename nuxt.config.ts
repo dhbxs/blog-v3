@@ -183,6 +183,8 @@ export default defineNuxtConfig({
 						'python',
 						'sql',
 						'log',
+						'shell',
+						'xml',
 					],
 				},
 				// @keep-sorted
