@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { escape } from 'es-toolkit/string'
+import { getShikiOptions } from '~/shiki.config'
+
 const props = withDefaults(defineProps<{
 	code?: string
 	language?: string
@@ -38,6 +41,42 @@ const byteSize = computed(() => formatBytes(new TextEncoder().encode(props.code)
 
 const codeblock = useTemplateRef('codeblock')
 const { copy, copied } = useCopy(codeblock)
+
+const shikiStore = useShikiStore()
+const rawHtml = ref(escape(props.code))
+
+function getIndent() {
+	if (meta.value.indent)
+		return meta.value.indent
+
+	if (['md', 'mdc', 'json', 'jsonc', 'yaml', 'yml'].includes(props.language))
+		return 2
+
+	return compConf.value.indent
+}
+
+onMounted(async () => {
+	const shiki = await shikiStore.load()
+	await shikiStore.loadLang(props.language)
+	// 处理 Markdown 高亮内代码块中的语言
+	// 加载 TeX 语言有概率导致 LaTeX 语言高亮炸掉
+	if (props.language === 'markdown' || props.language.startsWith('md')) {
+		const mdLangRegex = /^\s*`{3,}(\S+)/gm
+		const langs = Array
+			.from(props.code.matchAll(mdLangRegex), match => match[1])
+			.filter(lang => lang !== undefined)
+		await shikiStore.loadLang(...langs)
+	}
+
+	rawHtml.value = shiki.codeToHtml(
+		props.code.trimEnd(),
+		getShikiOptions(
+			props.language,
+			[compConf.value.enableIndentGuide ? 'ignoreRenderWhitespace' : 'ignoreRenderIndentGuides'],
+			{ meta: { indent: getIndent() } },
+		),
+	)
+})
 </script>
 
 <template>
@@ -66,10 +105,13 @@ const { copy, copied } = useCopy(codeblock)
 		</div>
 	</figcaption>
 
+	<!-- 嘿嘿，不要换行 -->
 	<pre
-		ref="codeblock" class="shiki scrollcheck-x"
+		ref="codeblock"
+		class="shiki scrollcheck-x"
 		:class="[props.class, { wrap: isWrap }]"
-	><slot /></pre>
+		v-html="rawHtml"
+	/>
 
 	<button
 		v-if="collapsible"
@@ -223,7 +265,7 @@ pre {
 
 	// 行指示器
 	&::before {
-		content: var(--line-indicator, "") attr(line);
+		content: var(--line-indicator, "") attr(data-line);
 		position: fixed;
 		inset-inline-start: 0;
 		width: var(--start-offset);

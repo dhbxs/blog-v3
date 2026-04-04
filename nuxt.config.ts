@@ -166,7 +166,25 @@ export default defineNuxtConfig({
 	content: {
 		build: {
 			markdown: {
-				highlight: false,
+				highlight: {
+					// Shiki 配置
+					theme: {
+						default: 'catppuccin-latte',
+						dark: 'one-dark-pro',
+					},
+					// Nuxt Content 默认支持的语言列表：
+					// ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml']
+					langs: [
+						'json',
+						'bash',
+						'java',
+						'c',
+						'cpp',
+						'python',
+						'sql',
+						'log',
+					],
+				},
 				// @keep-sorted
 				remarkPlugins: {
 					[pluginPath('remark-music')]: {},
@@ -241,7 +259,7 @@ ${packageJson.homepage}
 	},
 
 	ogImage: {
-		enabled: false,
+		enabled: true,
 	},
 
 	robots: {

@@ -40,7 +40,7 @@ export default defineAppConfig({
 		/** 精选文章 Slide */
 		slide: {
 			/** 适合封面图无字时启用 */
-			showTitle: true,
+			showTitle: false,
 		},
 
 		stats: {

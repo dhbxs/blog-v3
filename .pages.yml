@@ -16,6 +16,7 @@ content:
       - { name: image, label: "封面", type: string, required: false }
       - { name: categories, label: "分类", type: string, list: true, required: false }
       - { name: tags, label: "标签", type: string, list: true, required: false }
+			- { name: type, label: "文章类型", type: select, options: [{ value: "tech", label: "技术" }, { value: "story", label: "生活" }], required: false }
       - { name: permalink, label: "永久链接", type: string, required: true, default: "/posts/" }
       - { name: uuid, label: "UUID", type: uuid, options: {editable: true, generate: true}}
       - { name: recommend, label: "精选文章", type: number, required: false, default: 0 }
@@ -32,13 +33,13 @@ content:
     type: file
     path: content/link.md
     format: code
-      
+
   - name: blog-config
     label: "站点设置-blog.config"
     type: file
     path: blog.config.ts
     format: code
-    
+
   - name: app-config
     label: "站点设置-app.config"
     type: file
