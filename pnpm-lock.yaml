@@ -180,6 +180,9 @@ catalogs:
       version: 0.3.2
 
 patchedDependencies:
+  '@bikariya/shiki':
+    hash: dc9e95bd8762b748016a8db0caa1877a56e704f2f98905d8c829e04367238af8
+    path: patches/@bikariya__shiki.patch
   '@nuxt/image':
     hash: 579706651997597c070d331e56e6cf9f3deb05477e3696c678c5c49ff614ea9c
     path: patches/@nuxt__image.patch
@@ -208,7 +211,7 @@ importers:
         version: 0.0.8(magicast@0.5.2)
       '@bikariya/shiki':
         specifier: catalog:content
-        version: 0.0.8(magicast@0.5.2)(shiki@4.0.2)
+        version: 0.0.8(patch_hash=dc9e95bd8762b748016a8db0caa1877a56e704f2f98905d8c829e04367238af8)(magicast@0.5.2)(shiki@4.0.2)
       '@nuxt/content':
         specifier: catalog:content
         version: 3.12.0(magicast@0.5.2)
@@ -7613,7 +7616,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@bikariya/shiki@0.0.8(magicast@0.5.2)(shiki@4.0.2)':
+  '@bikariya/shiki@0.0.8(patch_hash=dc9e95bd8762b748016a8db0caa1877a56e704f2f98905d8c829e04367238af8)(magicast@0.5.2)(shiki@4.0.2)':
     dependencies:
       '@bikariya/core': 0.0.8(magicast@0.5.2)
       '@nuxt/kit': 4.4.2(magicast@0.5.2)
