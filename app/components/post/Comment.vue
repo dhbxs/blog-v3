@@ -1,8 +1,14 @@
 <script setup lang="tsx">
 import type { TippyComponent } from 'vue-tippy'
+import Artalk from 'artalk'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import 'artalk/Artalk.css'
 
 const appConfig = useAppConfig()
+const colorMode = useColorMode()
+const route = useRoute()
 
+const el = ref<HTMLElement>()
 const commentEl = useTemplateRef('comment')
 const popoverEl = useTemplateRef<TippyComponent>('popover')
 const popoverJumpTo = ref('')
@@ -10,6 +16,10 @@ const popoverInputEl = useTemplateRef('popover-input')
 const showUndo = ref(false)
 
 const popoverBind = ref<TippyComponent['$props']>({})
+
+const showArtalk = ref(appConfig.artalk?.enable)
+let artalk: Artalk
+const loaded = ref(false)
 
 /** 评论区链接守卫 */
 useEventListener(commentEl, 'click', (e) => {
@@ -52,16 +62,55 @@ function confirmOpen() {
 }
 
 onMounted(() => {
-	window.twikoo?.init?.({
-		envId: appConfig.twikoo?.envId,
-		// twikoo 会把挂载后的元素变为 #twikoo
-		el: '#twikoo',
-	})
+	if (showArtalk.value) {
+		artalk = Artalk.init({
+			el: el.value, // 挂载的 DOM 元素
+			pageKey: route.path, // 固定链接
+			pageTitle: document.title, // 页面标题
+			server: appConfig.artalk?.server, // 后端地址
+			site: appConfig.title, // 站点名
+			darkMode: colorMode.preference === 'dark',
+		})
+		artalk.on('mounted', () => {
+			loaded.value = true
+		})
+		artalk.on('list-failed', () => {
+			console.error('评论加载错误')
+			showArtalk.value = false
+		})
+	}
+})
+
+// 更新Artalk的页面信息（路径和标题）
+watch(
+	() => route.path,
+	(path) => {
+		nextTick(() => {
+			artalk?.update({
+				pageKey: path,
+				pageTitle: document.title,
+			})
+			artalk?.reload()
+		})
+	},
+)
+
+// 更新 Artalk 的颜色模式
+watch(
+	() => colorMode.preference,
+	(preference) => {
+		artalk?.setDarkMode(preference === 'dark')
+	},
+)
+
+onBeforeUnmount(() => {
+	artalk?.destroy()
+	artalk = null as any
 })
 </script>
 
 <template>
-<section ref="comment" class="z-comment">
+<section v-if="showArtalk" ref="comment" class="z-comment">
 	<h3 class="text-creative">
 		评论区
 	</h3>
@@ -104,7 +153,7 @@ onMounted(() => {
 		</template>
 	</Tooltip>
 
-	<div id="twikoo">
+	<div id="artalk" ref="el" :class="{ 'fade-in': loaded }" class="artalk">
 		<p>评论加载中...</p>
 	</div>
 </section>
@@ -143,106 +192,37 @@ onMounted(() => {
 	}
 }
 
-:deep(#twikoo) {
+:deep(#artalk) {
 	margin: 2em 0;
+	font-family: var(--font-creative);
+	transition: opacity 0.5s ease;
+	opacity: 0;
 
-	.tk-admin-container {
-		position: fixed;
-		z-index: calc(var(--z-index-popover) + 1);
+	&.fade-in {
+		opacity: 1;
 	}
 
-	.tk-input {
-		font-family: var(--font-monospace);
+	.atk-main-editor {
+		border-radius: 0.8rem;
+
+		.atk-editor-user-wrap .atk-editor-user .atk-user-btn,
+		> .atk-bottom .atk-plug-btn-wrap .atk-plug-btn {
+			border-radius: 0.8rem;
+		}
+
+		> .atk-bottom .atk-send-btn {
+			border-radius: 0.8rem;
+			line-height: 30px;
+		}
 	}
 
-	.tk-avatar {
+	.atk-list > .atk-list-header .atk-dropdown-wrap .atk-dropdown {
+		border-radius: 0.8rem;
+	}
+
+	.atk-comment > .atk-avatar img {
+		corner-shape: superellipse(1.2);
 		border-radius: 50%;
-
-		@supports (corner-shape: squircle) {
-			corner-shape: superellipse(1.2);
-		}
-
-		&.tk-clickable {
-			cursor: auto;
-		}
-	}
-
-	.tk-time {
-		color: var(--c-text-3);
-	}
-
-	.tk-content {
-		margin-top: 0;
-	}
-
-	.tk-comments-title, .tk-nick > strong {
-		font-family: var(--font-creative);
-	}
-
-	.tk-owo-emotion {
-		width: auto;
-		height: 1.4em;
-		vertical-align: text-bottom;
-	}
-
-	.tk-extras, .tk-footer {
-		font-size: 0.7em;
-		color: var(--c-text-3);
-	}
-
-	.tk-replies:not(.tk-replies-expand) {
-		mask-image: linear-gradient(to top, transparent, #FFF 4em);
-	}
-
-	.tk-expand {
-		border-radius: 0.5em;
-		transition: background-color 0.1s;
-	}
-
-	.tippy-svg-arrow > svg {
-		fill: inherit;
-		width: auto;
-		height: auto;
-	}
-}
-
-:deep(:where(.tk-preview-container,.tk-content)) {
-	pre {
-		overflow: auto;
-		border-radius: 0.5em;
-		font-size: 0.85em;
-	}
-
-	p {
-		margin: 0.2em 0;
-	}
-
-	img {
-		border-radius: 0.5em;
-	}
-
-	menu, ol, ul {
-		margin: 0.5em 0;
-		padding-inline-start: 1.5em;
-		font-size: 0.9rem;
-		list-style: revert;
-
-		> li {
-			margin: 0.2em 0;
-
-			&::marker {
-				color: var(--c-primary);
-			}
-		}
-	}
-
-	blockquote {
-		margin: 0.5em 0;
-		padding: 0.2em 0.5em;
-		border-inline-start: 4px solid var(--c-border);
-		border-radius: 4px;
-		background-color: var(--c-bg-2);
-		font-size: 0.9em;
 	}
 }
 </style>

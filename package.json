@@ -41,6 +41,7 @@
     "@vueuse/nuxt": "catalog:util",
     "@vueuse/router": "catalog:util",
     "abcjs": "catalog:content",
+    "artalk": "catalog:comment",
     "ci-info": "catalog:framework",
     "embla-carousel-autoplay": "catalog:ui",
     "embla-carousel-vue": "catalog:ui",

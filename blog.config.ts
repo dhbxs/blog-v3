@@ -30,6 +30,12 @@ const basicConfig = {
 const blogConfig = {
 	...basicConfig,
 
+	/** 自己部署的Artalk 服务 */
+	artalk: {
+		enable: true,
+		server: 'https://artalk.dhbxs.top/',
+	},
+
 	article: {
 		categories: {
 			[basicConfig.defaultCategory]: { icon: 'ph:folder-dotted-bold' },
@@ -79,13 +85,13 @@ const blogConfig = {
 		// 自己网站的 Cloudflare Insights 统计服务
 		// { 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "97a4fe32ed8240ac8284e9bffaf03962"}', 'defer': true },
 		// Twikoo 评论系统
-		{ src: '/assets/twikoo/twikoo-1.7.7.min.js', defer: true },
+		// { src: '/assets/twikoo/twikoo-1.7.7.min.js', defer: true },
 	],
 
 	/** 自己部署的 Twikoo 服务 */
 	twikoo: {
-		envId: 'https://twikoo.dhbxs.top/',
-		preload: 'https://twikoo.dhbxs.top/',
+		envId: '',
+		preload: '',
 	},
 }
 
