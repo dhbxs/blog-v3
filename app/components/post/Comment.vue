@@ -210,9 +210,16 @@ onBeforeUnmount(() => {
 			border-radius: 0.8rem;
 		}
 
-		> .atk-bottom .atk-send-btn {
-			border-radius: 0.8rem;
-			line-height: 30px;
+		> .atk-bottom {
+			.atk-send-btn {
+				border-radius: 0.8rem;
+				line-height: 30px;
+			}
+
+			> .atk-bottom-left > .atk-state-wrap {
+				border-radius: .8rem;
+				overflow: hidden;
+			}
 		}
 	}
 
