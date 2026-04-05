@@ -154,7 +154,6 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@vueuse/nuxt',
 		'nuxt-llms',
-		'nuxt-studio',
 		'unplugin-yaml/nuxt',
 	],
 
@@ -274,18 +273,5 @@ ${packageJson.homepage}
 		name: blogConfig.title,
 		url: blogConfig.url,
 		defaultLocale: blogConfig.language,
-	},
-
-	studio: {
-		// Studio admin route (default: '/_studio')
-		route: '/studio',
-
-		// Git repository configuration (owner and repo are required)
-		repository: {
-			provider: 'github', // 'github' or 'gitlab'
-			owner: 'dhbxs', // your GitHub/GitLab username or organization
-			repo: 'blog-v3', // your repository name
-			branch: 'main', // the branch to commit to (default: main)
-		},
 	},
 })

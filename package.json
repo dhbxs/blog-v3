@@ -49,7 +49,6 @@
     "es-toolkit": "catalog:util",
     "minisearch": "catalog:util",
     "nuxt": "catalog:framework",
-    "nuxt-studio": "catalog:content",
     "parse-domain": "catalog:util",
     "plain-shiki": "catalog:content",
     "shiki": "catalog:content",
