@@ -13,7 +13,7 @@ const page = useRouteQuery('page', '1', { transform: Number })
 
 // 监听 page 变化，自动重新获取
 const { data: listPaged } = await useAsyncData(
-	() => `memos_posts_${page.value}`,
+	'memos_posts',
 	() => useMemoIndexOptions(page.value, pageSize.value),
 	{
 		default: () => [],
