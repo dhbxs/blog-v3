@@ -206,6 +206,7 @@ function replyTalk(event: MouseEvent): void {
 
 			:deep(figure.image img) {
 				margin: 1em 0;
+				max-width: 100%;
 			}
 		}
 
