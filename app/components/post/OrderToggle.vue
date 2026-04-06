@@ -98,4 +98,10 @@ function toggleDirection() {
 .iconify + span {
 	margin-inline-start: 0.2em;
 }
+
+@media (max-width: 600px) {
+	.order-toggle {
+		gap: 0.5rem;
+	}
+}
 </style>
