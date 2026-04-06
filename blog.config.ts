@@ -6,7 +6,7 @@ const basicConfig = {
 	// 长 description 利好于 SEO
 	description: '灯火不休时(dhbxs)的博客站点，记录前端与后端开发的技术笔记、实战经验与学习心得，分享编程日常与个人思考。一名开发者的技术成长之路，持续更新Web开发、代码优化与生活随笔。',
 	author: {
-		name: 'dhbxs',
+		name: '灯火不休时',
 		avatar: 'https://file.dhbxs.top/ylvwvjjs.jpg',
 		email: 'yao@mail.dhbxs.top',
 		homepage: 'https://blog.dhbxs.top/',
@@ -55,6 +55,7 @@ const blogConfig = {
 		types: {
 			tech: {},
 			story: {},
+			memo: {},
 		},
 		/** 分类排序方式，键为排序字段，值为显示名称 */
 		order: {
@@ -76,6 +77,12 @@ const blogConfig = {
 		limit: 50,
 		/** 订阅源是否启用XSLT样式 */
 		enableStyle: true,
+	},
+
+	/** 说说功能 */
+	memo: {
+		enable: true,
+		pageSize: 10,
 	},
 
 	/** 向 <head> 中添加脚本 */

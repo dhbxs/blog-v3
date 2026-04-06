@@ -10,9 +10,21 @@ const appConfig = useAppConfig()
 const segmenter = Intl.Segmenter && new Intl.Segmenter(appConfig.language, { granularity: 'word' })
 
 // await useAsyncData() 会阻塞渲染
-const { data, status } = await useLazyAsyncData(
-	'search',
+const { data: contentData, status: searchContentStatus } = await useLazyAsyncData(
+	'search-content',
 	() => queryCollectionSearchSections('content', {
+		ignoredTags: ['pre'],
+	}),
+)
+const { data: linkData, status: searchLinkStatus } = await useLazyAsyncData(
+	'search-link',
+	() => queryCollectionSearchSections('link', {
+		ignoredTags: ['pre'],
+	}),
+)
+const { data: memosData, status: searchMemosStatus } = await useLazyAsyncData(
+	'search-memo',
+	() => queryCollectionSearchSections('memos', {
 		ignoredTags: ['pre'],
 	}),
 )
@@ -27,7 +39,7 @@ const miniSearch = new MiniSearch({
 		boost: { title: 3, titles: 2 },
 	},
 	processTerm: segmenter
-		? term => Array.from(segmenter.segment(term)).map(seg => seg.segment.toLowerCase())
+		? term => Array.from(segmenter.segment(term), seg => seg.segment.toLowerCase())
 		: undefined,
 })
 
@@ -36,7 +48,9 @@ const searchInput = ref<HTMLInputElement>()
 
 const { word, debouncedWord } = storeToRefs(searchStore)
 const result = computed(() => {
-	void data.value
+	void contentData.value
+	void linkData.value
+	void memosData.value
 	return miniSearch.search(debouncedWord.value)
 })
 
@@ -48,9 +62,21 @@ const activeItem = computed(() => listResult.value?.children[activeIndex.value] 
 
 whenever(() => props.open, focusInput)
 
-watch(status, (newStatus) => {
-	if (newStatus === 'success' && data.value) {
-		miniSearch.addAll(data.value)
+watch(searchContentStatus, (newStatus) => {
+	if (newStatus === 'success' && contentData.value) {
+		miniSearch.addAll(contentData.value)
+	}
+})
+
+watch(searchLinkStatus, (newStatus) => {
+	if (newStatus === 'success' && linkData.value) {
+		miniSearch.addAll(linkData.value)
+	}
+})
+
+watch(searchMemosStatus, (newStatus) => {
+	if (newStatus === 'success' && memosData.value) {
+		miniSearch.addAll(memosData.value)
 	}
 })
 
