@@ -31,6 +31,7 @@
     "@bikariya/modals": "catalog:ui",
     "@bikariya/shiki": "catalog:content",
     "@nuxt/content": "catalog:content",
+    "@nuxt/fonts": "catalog:ui",
     "@nuxt/icon": "catalog:ui",
     "@nuxt/image": "catalog:ui",
     "@nuxtjs/color-mode": "catalog:ui",
