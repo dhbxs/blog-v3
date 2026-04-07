@@ -50,6 +50,7 @@ const listRecommended = computed(() => orderBy(
 		</PostOrderToggle>
 
 		<TransitionGroup tag="menu" class="proper-height" name="float-in">
+			<!-- is-lcp 首页优先加载前3篇文章的图片，提升LCP性能评分 -->
 			<PostArticle
 				v-for="article, index in listPaged"
 				:key="article.path"
@@ -57,6 +58,7 @@ const listRecommended = computed(() => orderBy(
 				:to="article.path"
 				:use-updated="sortOrder === 'updated'"
 				:style="getFixedDelay(index * 0.05)"
+				:is-lcp="index < 4"
 			/>
 		</TransitionGroup>
 

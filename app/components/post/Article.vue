@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { ArticleProps } from '~/types/article'
 
-const props = defineProps<{ useUpdated?: boolean } & ArticleProps>()
+// isLcp值主要用来给首页优先加载前3篇文章的图片，提升LCP性能评分
+const props = defineProps<{ useUpdated?: boolean; isLcp?: boolean } & ArticleProps>()
 
 const appConfig = useAppConfig()
 
@@ -14,7 +15,8 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 
 <template>
 <UtilLink class="article-card card upraise">
-	<NuxtImg v-if="image" class="article-cover" :src="image" :alt="title" />
+	<NuxtImg v-if="image" class="article-cover" :src="image" :alt="title" :preload="isLcp"
+		:loading="isLcp ? 'eager' : 'lazy'" :fetchpriority="isLcp ? 'high' : 'auto'" />
 	<article>
 		<h2 class="article-title text-creative">
 			{{ title }}
