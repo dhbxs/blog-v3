@@ -227,9 +227,15 @@ onBeforeUnmount(() => {
 		border-radius: 0.8rem;
 	}
 
-	.atk-comment > .atk-avatar img {
-		corner-shape: superellipse(1.2);
-		border-radius: 50%;
+	.atk-comment {
+		> .atk-avatar img {
+			corner-shape: superellipse(1.2);
+			border-radius: 50%;
+		}
+
+		.atk-main .atk-header .atk-nick {
+			font-family: 'AlimamaFangYuanTi', var(--font-basic);
+		}
 	}
 }
 </style>

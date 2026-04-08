@@ -177,6 +177,7 @@ function replyTalk(event: MouseEvent): void {
 				align-items: center;
 				display: flex;
 				gap: 5px;
+				font-family: 'AlimamaFangYuanTi', var(--font-basic);
 			}
 
 			.date {
