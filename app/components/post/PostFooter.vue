@@ -53,8 +53,9 @@ const permalink = computed(() => {
 			许可协议，转载请注明来自
 			<Badge :link="appConfig.url" :text="appConfig.title" :img="appConfig.favicon" round />
 		</p>
+		<div class="line"/>
 		<p>
-			本文永久链接: <ProseA :href="permalink">
+			本文永久链接：<ProseA :href="permalink" class="permalink">
 				{{ permalink }}
 			</ProseA>
 		</p>
@@ -68,6 +69,15 @@ const permalink = computed(() => {
 	border: 1px solid var(--c-border);
 	border-radius: 1rem;
 	background-color: var(--c-bg-2);
+
+	.line {
+		margin: 10px 0;
+		border-top: 2px dashed var(--c-border);
+	}
+
+	.permalink {
+		word-break: break-all;
+	}
 }
 
 section {
