@@ -1,24 +1,18 @@
 <script setup lang="ts">
 const layoutStore = useLayoutStore()
-const { asideWidgets, panelTransform } = storeToRefs(layoutStore)
+const { asideWidgets, avoidTargets } = storeToRefs(layoutStore)
+
+const panelRef = useTemplateRef('blog-panel')
+const { transform } = useAvoidTransform(panelRef, avoidTargets)
 </script>
 
 <template>
-<!-- 使用 :style="{ transform: panelTransform }" 可能丢失响应性 -->
 <div
 	id="blog-panel"
+	ref="blog-panel"
 	:class="{ 'has-active': layoutStore.state !== 'none' }"
-	:style="{ '--transform': panelTransform }"
+	:style="{ '--transform': transform }"
 >
-	<button
-		class="toggle-sidebar mobile-only"
-		:class="{ active: layoutStore.state === 'sidebar' }"
-		aria-label="切换菜单"
-		@click="layoutStore.toggle('sidebar')"
-	>
-		<Icon class="rtl-flip" name="ph:sidebar-duotone" />
-	</button>
-
 	<button
 		v-if="asideWidgets.length"
 		class="toggle-aside widescreen-only"
@@ -26,7 +20,17 @@ const { asideWidgets, panelTransform } = storeToRefs(layoutStore)
 		aria-label="切换侧边栏"
 		@click="layoutStore.toggle('aside')"
 	>
-		<Icon class="rtl-flip" name="ph:align-right-duotone" />
+		<Icon class="rtl-flip" name="tabler:align-right" />
+	</button>
+
+	<Icon v-show="false" name="tabler:layout-sidebar-filled" />
+	<button
+		class="toggle-sidebar mobile-only"
+		:class="{ active: layoutStore.state === 'sidebar' }"
+		aria-label="切换菜单"
+		@click="layoutStore.toggle('sidebar')"
+	>
+		<Icon class="rtl-flip" :name="layoutStore.state === 'sidebar' ? 'tabler:layout-sidebar-filled' : 'tabler:layout-sidebar'" />
 	</button>
 </div>
 </template>

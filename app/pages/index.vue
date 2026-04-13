@@ -43,7 +43,7 @@ const listRecommended = computed(() => orderBy(
 		>
 			<ZSecret>
 				<UtilLink to="/preview" class="preview-entrance">
-					<Icon name="ph:file-lock-bold" />
+					<Icon name="tabler:shield-lock" />
 					查看预览文章
 				</UtilLink>
 			</ZSecret>
@@ -62,7 +62,7 @@ const listRecommended = computed(() => orderBy(
 			/>
 		</TransitionGroup>
 
-		<ZPagination v-model="page" sticky :total-pages="totalPages" />
+		<ZPagination v-model="page" sticky avoid :total-pages="totalPages" />
 	</div>
 </UtilHydrateSafe>
 </template>
