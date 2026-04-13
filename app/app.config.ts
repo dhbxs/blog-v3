@@ -75,7 +75,7 @@ export default defineAppConfig({
 			{
 				title: '社交',
 				items: [
-					{ icon: 'tabler:brand-githubd', text: 'dhbxs', url: 'https://github.com/dhbxs' },
+					{ icon: 'tabler:brand-github', text: 'dhbxs', url: 'https://github.com/dhbxs' },
 					// { icon: 'ri:qq-line', text: '群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
 					{ icon: 'tabler:mail', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
 				],
