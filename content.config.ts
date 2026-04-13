@@ -57,7 +57,10 @@ const articleSchema = z.object({
 
 export const collections = {
 	content: defineCollection({
-		source: 'posts/**',
+		source: {
+			include: '**/**',
+			exclude: ['memos/**'],
+		},
 		type: 'page',
 		schema: articleSchema.extend({
 			sitemap: defineSitemapSchema({
