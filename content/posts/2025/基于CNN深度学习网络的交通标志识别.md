@@ -7,7 +7,7 @@ image: https://file.dhbxs.top/2025/10/ybfbhwfk.webp
 permalink: /posts/4dCtXKfh
 categories: [开发]
 tags: [深度学习, CNN]
-recommend: 0
+recommend: 1
 ---
 
 > 本项目实现了一个基于CNN深度学习的交通标志识别系统，使用Keras构建卷积神经网络，训练准确率高达95%。系统采用Python开发，配备友好的tkinter图形界面，支持用户上传图片并自动识别交通标志类型。项目包含完整的数据预处理、模型训练、评估与部署流程，代码开源，适合深度学习与计算机视觉的学习与实践。源码与数据集均已公开，欢迎访问GitHub或Gitee获取。
