@@ -2,6 +2,7 @@
 const { timeEstablished } = useAppConfig()
 
 const blogLog = [
+	{ label: '2026-04-16', value: '正式切换到Nuxt4 + Nuxt Content v3博客' },
 	{ label: '2026-04-05', value: '准备从Halo切换到由Nuxt4 + Nuxt Content v3开发的博客系统' },
 	{ label: timeEstablished, value: '发布第一篇文章' },
 ]
