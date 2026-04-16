@@ -20,7 +20,7 @@ const basicConfig = {
 	language: 'zh-CN',
 	timeEstablished: '2018-01-01',
 	timeZone: 'Asia/Shanghai',
-	url: 'https://blog.dhbxs.eu.org/',
+	url: 'https://blog.dhbxs.top/',
 	defaultCategory: '未分类',
 }
 
