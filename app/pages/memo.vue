@@ -3,7 +3,11 @@ const appConfig = useAppConfig()
 const title = '碎碎念'
 const description = '记录生活点滴，一些想法。'
 const image = 'https://file.dhbxs.top/2025/10/hoaueqzs.avif'
-useSeoMeta({ title, description, ogImage: image })
+useSeoMeta({ 
+	title: title,
+	description: description, 
+	ogImage: image
+})
 
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
@@ -24,7 +28,7 @@ const { data: listPaged } = await useAsyncData(
 const { data: count } = await useAsyncData('memos_count', () => useMemoCount(), { default: () => 0 })
 const totalPages = computed(() => Math.ceil((count.value || 0) / pageSize.value))
 
-useSeoMeta({ title: () => (page.value > 1 ? `第${page.value}页` : '') })
+useSeoMeta({ title: () => (page.value > 1 ? `第${page.value}页 | ${title}` : title) })
 
 // ========== 模块级常量，避免重复编译 ==========
 const REGEX_WHITESPACE = /\s+/g
