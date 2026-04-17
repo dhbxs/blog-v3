@@ -1,6 +1,6 @@
 ---
 title: Hadoop集群搭建（1主2从）
-description: 本文详细记录了在 macOS Big Sur 系统上基于 VMware Fusion 搭建三节点 Hadoop 2.7.7 集群的全过程。作者使用 CentOS 7 最小化安装以节省资源，配置固定 IP、关闭防火墙与 SELinux，并通过克隆虚拟机快速构建 master、s1、s2 三台节点。教程涵盖 JDK 与 Hadoop 安装、SSH 免密登录、时间同步、Hadoop 核心配置文件（core-site.xml、hdfs-site.xml 等）修改、环境变量设置及集群启动验证。此外，还扩展部署了 Spark 3.1.1，完成从 Hadoop 到 Spark 的完整大数据环境搭建。全文步骤清晰，适合初学者实践参考。
+description: 详细记录了在macOS Big Sur上使用VMware Fusion搭建三节点Hadoop 2.7.7集群的全过程，包括CentOS 7最小化安装、固定IP配置、SSH免密登录、Hadoop核心配置文件修改及集群启动验证，并扩展部署Spark 3.1.1，形成完整大数据环境。
 date: 2024-04-18 06:26:21
 updated: 2024-04-18 06:26:21
 image: https://file.dhbxs.top/2025/10/ioyknzke.png
@@ -133,7 +133,7 @@ ping www.baidu.com
 9）新建 Hadooptools 文件夹，后面所有文件均在该文件夹下存放。在 root 用户根目录新建 Hadooptools 文件夹，依次输入以下命令：` cd /root``mkdir Hadooptools``cd Hadooptools `
    ![](https://file.dhbxs.top/2025/10/chlwsjib.png)
 10）下载本文开始所提供的百度网盘资料
-11）通过 mac 自带的 terminal 上传到服务器打开 Mac 终端，然后输入以下命令，注意路径和 ip 换成自己的 
+11）通过 mac 自带的 terminal 上传到服务器打开 Mac 终端，然后输入以下命令，注意路径和 ip 换成自己的
 `sudo scp /Users/wcooper/Downloads/jdk-8u171-linux-x64.tar.gz root@192.168.141.6:/root/Hadooptools/`
 `sudo scp /Users/wcooper/Downloads/jdk-8u171-linux-x64.tar.gz root@192.168.141.6:/root/Hadooptools/ `
 这里上传 Hadoop 和 jdk 的安装包，`scp` 命令用法如下：

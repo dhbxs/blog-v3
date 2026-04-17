@@ -140,14 +140,11 @@ export default defineNuxtConfig({
 	},
 
 	// @keep-sorted
-	modules: ['@bikariya/image-viewer', '@bikariya/modals', '@bikariya/shiki', '@nuxt/a11y', '@nuxt/content', '@nuxt/hints', '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-llms', 'unplugin-yaml/nuxt', '@nuxt/fonts'],
+	modules: ['@bikariya/image-viewer', '@bikariya/modals', '@bikariya/shiki', '@nuxt/a11y', '@nuxt/content', '@nuxt/fonts', '@nuxt/hints', '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-llms', 'unplugin-yaml/nuxt'],
 
-	// fonts: {
-	// 	families: [
-	// 		// Variable fonts are also supported
-	// 		{ name: 'Inter Variable', provider: 'google' },
-	// 	],
-	// },
+	fonts: {
+		provider: 'bunny',
+	},
 
 	colorMode: {
 		preference: 'system',

@@ -115,6 +115,9 @@ catalogs:
     '@iconify-json/simple-icons':
       specifier: ^1.2.77
       version: 1.2.77
+    '@iconify-json/tabler':
+      specifier: ^1.2.33
+      version: 1.2.33
     '@nuxt/fonts':
       specifier: 0.14.0
       version: 0.14.0
@@ -328,6 +331,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: catalog:ui
         version: 1.2.77
+      '@iconify-json/tabler':
+        specifier: catalog:ui
+        version: 1.2.33
       '@nuxt/a11y':
         specifier: catalog:quality
         version: 1.0.0-alpha.1(magicast@0.5.2)(vite@7.3.2(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
@@ -1225,6 +1231,9 @@ packages:
 
   '@iconify-json/simple-icons@1.2.77':
     resolution: {integrity: sha512-oaENvo6C3BkAEWMlcQA3XemxU9v2SFOTlApSUCODAkIu1haeLCjzrmH3HgmGqjRnJjM+LevO8sA+MgdMHBFBDA==}
+
+  '@iconify-json/tabler@1.2.33':
+    resolution: {integrity: sha512-q9nUQfE/cjIrGh5bAKHTphitAZpT0kX9SxDgZo3Sx8ofeDTsaHVdRwrn+CfKiJ5vQ1b1btqVwizXzIgz9KEPjA==}
 
   '@iconify/collections@1.0.669':
     resolution: {integrity: sha512-oy/ztmcRvljkx4wV/fQ5OmpHyjEstntRjgexMajmlWMCy3Q54C3ISHWfB6p5sTH7eQPo8EWre9TCnldOBqcuxg==}
@@ -9003,6 +9012,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/simple-icons@1.2.77':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/tabler@1.2.33':
     dependencies:
       '@iconify/types': 2.0.0
 
