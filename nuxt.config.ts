@@ -1,5 +1,6 @@
-import { resolve } from 'node:path'
-import { arch, env, version as nodeVersion, platform } from 'node:process'
+import fs from 'node:fs'
+import path, { resolve } from 'node:path'
+import { arch, cwd, env, version as nodeVersion, platform } from 'node:process'
 import { pathToFileURL } from 'node:url'
 import { name as ciName, CLOUDFLARE_PAGES, GITHUB_ACTIONS, NETLIFY } from 'ci-info'
 import { mapValues } from 'es-toolkit/object'
@@ -211,6 +212,16 @@ ${packageJson.homepage}
 				ctx.content.path = permalink
 			else if (blogConfig.article.hidePostPrefix && path?.startsWith('/posts/'))
 				ctx.content.path = path.slice('/posts'.length)
+		},
+		'build:before': () => {
+			const key = env.INDEXNOW_KEY
+			if (!key)
+				return console.warn('⚠️ INDEXNOW_KEY 未设置，跳过生成验证文件')
+
+			const filePath = path.join(cwd(), 'public', `${key}.txt`)
+			fs.mkdirSync(path.dirname(filePath), { recursive: true })
+			fs.writeFileSync(filePath, key)
+			console.log(`✅ 已生成 public/${key}.txt`)
 		},
 	},
 
