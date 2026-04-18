@@ -1,0 +1,20 @@
+name: 'IndexNow'
+on:
+  schedule:
+    # 每天凌晨 2 点自动运行
+    - cron: '0 2 * * *'
+  
+  # 添加手动触发
+  workflow_dispatch:
+
+jobs:
+  check-and-submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: indexnow-action
+        uses: bojieyang/indexnow-action@v2
+        with:
+          sitemap-location: 'https://blog.dhbxs.top/sitemap.xml'
+          key: ${{ secrets.INDEXNOW_KEY }}
+          since-unit: year
+          since: 8
