@@ -61,7 +61,7 @@ export default defineAppConfig({
 			// { icon: 'ri:qq-line', text: '交流群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
 			{ icon: 'tabler:brand-github', text: 'GitHub: dhbxs', url: 'https://github.com/dhbxs' },
 			{ icon: 'tabler:rss', text: 'Atom订阅', url: '/atom.xml' },
-			{ icon: 'ri:subway-line', text: '开往', url: 'https://www.travellings.cn/go.html' },
+			{ icon: 'ri:subway-line', text: '开往', url: 'https://www.travellings.cn/train.html' },
 		] satisfies NavItem[],
 		/** 页脚站点地图 */
 		nav: [
@@ -69,7 +69,9 @@ export default defineAppConfig({
 				title: '探索',
 				items: [
 					{ icon: 'tabler:rss', text: 'Atom订阅', url: '/atom.xml' },
-					{ icon: 'ri:subway-line', text: '开往', url: 'https://www.travellings.cn/go.html' },
+					{ icon: 'ri:subway-line', text: '开往', url: 'https://www.travellings.cn/train.html' },
+					{ icon: 'tabler:link', text: '博友圈', url: 'https://www.boyouquan.com/blogs/blog.dhbxs.top' },
+					{ icon: 'tabler:link', text: 'BlogsClub', url: 'https://blogs.quest/dhbxs' },
 				],
 			},
 			{
