@@ -65,7 +65,7 @@ export default [
 				comment: 'Fluid社群好友。',
 			},
 			{
-				author: "Oyiso's Blog",
+				author: 'Oyiso\'s Blog',
 				desc: 'The shortest answer is doing',
 				link: 'https://oyiso.cn',
 				icon: 'https://oyiso.cn/logo.png',
@@ -75,7 +75,7 @@ export default [
 				comment: 'WordPress主题开发者，前端爱好者。',
 			},
 			{
-				author: "AimTao",
+				author: 'AimTao',
 				desc: '来日做春风，浪漫且自由',
 				link: 'https://www.aimtao.net/',
 				feed: 'https://www.aimtao.net/atom.xml',
@@ -86,7 +86,7 @@ export default [
 				comment: 'Fluid社群好友，小米员工，Android系统开发工程师',
 			},
 			{
-				author: "会飞的猫",
+				author: '会飞的猫',
 				desc: '记录时间带走的东西',
 				link: 'https://blog.flycat.tech',
 				feed: 'https://blog.flycat.tech/rss.xml',
@@ -97,7 +97,7 @@ export default [
 				comment: 'Java开发攻城狮',
 			},
 			{
-				author: "唯知笔记",
+				author: '唯知笔记',
 				desc: '在这里，我们分享最新的技术趋势、编程技巧和开发心得，一起成长，共同进步',
 				link: 'https://note.weizwz.com',
 				feed: 'https://note.weizwz.com/feed.xml',
@@ -108,7 +108,7 @@ export default [
 				comment: '前端开发攻城狮，技术博主',
 			},
 			{
-				author: "iren • Moment Collector",
+				author: 'iren • Moment Collector',
 				desc: '一名在读的运维工程师，记录那些我在人间生活的日子。',
 				link: 'https://blog.mletter.cn/',
 				feed: 'https://blog.mletter.cn/rss.xml',
@@ -119,7 +119,7 @@ export default [
 				comment: '运维工程师',
 			},
 			{
-				author: "YYsuni",
+				author: 'YYsuni',
 				desc: 'YYsuni 的个人博客，记录前端开发、探索笔记。前端 UI 更新代码仓库。',
 				link: 'https://www.yysuni.com/',
 				feed: 'https://www.yysuni.com/rss.xml',
@@ -130,7 +130,7 @@ export default [
 				comment: '前端开发工程师，博客为自主开发',
 			},
 			{
-				author: "Honesty",
+				author: 'Honesty',
 				desc: '从浩瀚无垠的知识中看到一缕光',
 				link: 'https://blog.hehouhui.cn',
 				icon: 'https://www.hehouhui.cn/images/avatar.jpeg',
@@ -138,6 +138,16 @@ export default [
 				archs: ['NotionNext', 'Vercel'],
 				date: '2024-02-02',
 				comment: '前端开发工程师，博客为自主开发',
+			},
+			{
+				author: 'HaoUp’s Blog',
+				desc: '学习网络知识、积累兴趣的地方。',
+				link: 'https://blog.528688.cn',
+				icon: 'https://cdn.528688.cn/favicon.ico',
+				avatar: 'https://cdn.528688.cn/favicon.ico',
+				archs: ['Halo', '虚拟主机'],
+				date: '2026-05-01',
+				comment: '前端工程师，博客主题很亮眼',
 			},
 		],
 	},
