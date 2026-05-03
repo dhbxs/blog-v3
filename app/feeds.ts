@@ -143,6 +143,7 @@ export default [
 				author: 'HaoUp’s Blog',
 				desc: '学习网络知识、积累兴趣的地方。',
 				link: 'https://blog.528688.cn',
+				feed: 'https://blog.528688.cn/rss.xml',
 				icon: 'https://cdn.528688.cn/favicon.ico',
 				avatar: 'https://cdn.528688.cn/favicon.ico',
 				archs: ['Halo', '虚拟主机'],
