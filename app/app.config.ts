@@ -87,6 +87,7 @@ export default defineAppConfig({
 				items: [
 					{ icon: 'simple-icons:nuxt', text: `主题: ${pascalCase(name)} ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
 					{ icon: 'tabler:color-swatch', text: '主题和组件文档', url: '/theme' },
+					{ icon: 'ph:activity-bold', text: '站点状态', url: 'https://status.dhbxs.top' },
 					{ icon: 'tabler:certificate', text: '晋ICP备2021007495号-1', url: 'https://beian.miit.gov.cn/' },
 				],
 			},
