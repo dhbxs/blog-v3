@@ -7,7 +7,7 @@ import { mapValues } from 'es-toolkit/object'
 const appConfig = useAppConfig()
 useSeoMeta({
 	title: '归档',
-	description: `${appConfig.title}的所有文章归档。`,
+	description: `这里是${appConfig.title}的所有文章归档聚合页面。灯火不休时(dhbxs)的博客中的归档页面，记录前端与后端开发的技术笔记、实战经验与学习心得，分享编程日常与个人思考。一名开发者的技术成长之路，持续更新Web开发、代码优化与生活随笔。`,
 })
 const birthYear = computed(() => appConfig.component.stats.birthYear)
 const showTuning = ref(false)

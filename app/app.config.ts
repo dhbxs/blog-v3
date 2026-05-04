@@ -70,8 +70,8 @@ export default defineAppConfig({
 				items: [
 					{ icon: 'tabler:rss', text: 'Atom订阅', url: '/atom.xml' },
 					{ icon: 'ri:subway-line', text: '开往', url: 'https://www.travellings.cn/train.html' },
-					{ icon: 'tabler:link', text: '博友圈', url: 'https://www.boyouquan.com/blogs/blog.dhbxs.top' },
-					{ icon: 'tabler:link', text: 'BlogsClub', url: 'https://blogs.quest/dhbxs' },
+					{ icon: 'ph:aperture-bold', text: '博友圈', url: 'https://www.boyouquan.com/blogs/blog.dhbxs.top' },
+					{ icon: 'proicons:text-bold', text: 'BlogsClub', url: 'https://blogs.quest/dhbxs' },
 				],
 			},
 			{

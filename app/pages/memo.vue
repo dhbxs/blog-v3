@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
 const title = '碎碎念'
-const description = '记录生活点滴，一些想法。'
+const description = '灯火不休时(dhbxs)的博客站点中的碎碎念页面，记录生活点滴，一些想法。灯火不休时的博客记录前端与后端开发的技术笔记、实战经验与学习心得，分享编程日常与个人思考。一名开发者的技术成长之路，持续更新Web开发、代码优化与生活随笔。记录生活点滴，一些想法。'
 const image = 'https://file.dhbxs.top/2025/10/hoaueqzs.avif'
-useSeoMeta({ 
-	title: title,
-	description: description, 
-	ogImage: image
+useSeoMeta({
+	title,
+	description,
+	ogImage: image,
 })
 
 const layoutStore = useLayoutStore()
