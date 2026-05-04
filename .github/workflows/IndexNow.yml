@@ -17,5 +17,5 @@ jobs:
           sitemap-location: 'https://blog.dhbxs.top/sitemap.xml'
           key: ${{ secrets.INDEXNOW_KEY }}
           since-unit: day
-          since: 30
+          since: 365
           lastmod-required: false
