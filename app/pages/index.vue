@@ -26,6 +26,31 @@ const listRecommended = computed(() => orderBy(
 	['recommend', 'date'],
 	['desc'],
 ))
+
+useJsonld(() => ({
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		'mainEntityOfPage': {
+			'@type': 'WebPage',
+			'@id': `${appConfig.url}`,
+		},
+		'name': `${appConfig.title + '-' + appConfig.subtitle}`,
+		'description': `${appConfig.description}`,
+		'author': {
+			'@type': 'Person',
+			'name': `${appConfig.author.name}`,
+		},
+		'publisher': {
+			'@type': 'Organization',
+			'name': `${appConfig.title}`,
+			'logo': {
+				'@type': 'ImageObject',
+				'url': `${appConfig.favicon}`,
+			},
+		},
+		'image': 'https://file.dhbxs.top/2025/10/hoaueqzs.avif',
+		'url': `${appConfig.url}`,
+	}))
 </script>
 
 <template>

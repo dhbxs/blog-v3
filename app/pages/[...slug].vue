@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const appConfig = useAppConfig()
+
 const route = useRoute()
 
 const layoutStore = useLayoutStore()
@@ -29,6 +31,34 @@ if (post.value) {
 		description: post.value.description,
 	})
 	layoutStore.setAside(post.value.meta?.aside as WidgetName[] | undefined)
+
+	useJsonld(() => ({
+		'@context': 'https://schema.org',
+		'@type': 'BlogPosting',
+		'mainEntityOfPage': {
+			'@type': 'WebPage',
+			'@id': `${`${appConfig.url}posts${post.value?.permalink}`}`,
+		},
+		'headline': `${post.value?.title}`,
+		'description': `${post.value?.description}`,
+		'datePublished': `${post.value?.date}`,
+		'dateModified': `${post.value?.updated}`,
+		'author': {
+			'@type': 'Person',
+			'name': `${appConfig.author.name}`,
+		},
+		'publisher': {
+			'@type': 'Organization',
+			'name': `${appConfig.title}`,
+			'logo': {
+				'@type': 'ImageObject',
+				'url': `${appConfig.favicon}`,
+			},
+		},
+		'image': `${post.value?.image ? post.value?.image : appConfig.favicon}`,
+		'url': `${`${appConfig.url}/posts/${post.value?.permalink}`}`,
+		'articleSection': `${post.value?.categories}`,
+	}))
 }
 else {
 	const event = useRequestEvent()

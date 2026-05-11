@@ -7,9 +7,9 @@ import { mapValues } from 'es-toolkit/object'
 import { pascalCase } from 'es-toolkit/string'
 import { Temporal } from 'temporal-polyfill'
 import blogConfig from './blog.config'
+import oldBLogRedirectList from './old-blog-redirects.json'
 import packageJson from './package.json'
 import redirectList from './redirects.json'
-import oldBLogRedirectList from './old-blog-redirects.json'
 
 function pluginPath(path: string) {
 	return pathToFileURL(resolve(`./remark-plugins/${path}.ts`)).href
@@ -86,7 +86,7 @@ export default defineNuxtConfig({
 
 	// @keep-sorted
 	routeRules: {
-		...mapValues(oldBLogRedirectList, to => ({ prerender: true, redirect: { to, statusCode: 301 as const } })),	
+		...mapValues(oldBLogRedirectList, to => ({ prerender: true, redirect: { to, statusCode: 301 as const } })),
 		...mapValues(redirectList, to => ({ redirect: { to, statusCode: 308 as const } })),
 		'/api/stats': { prerender: true, headers: { 'Content-Type': 'application/json' } },
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
@@ -143,7 +143,7 @@ export default defineNuxtConfig({
 	},
 
 	// @keep-sorted
-	modules: ['@bikariya/image-viewer', '@bikariya/modals', '@bikariya/shiki', '@nuxt/a11y', '@nuxt/content', '@nuxt/fonts', '@nuxt/hints', '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-llms', 'unplugin-yaml/nuxt'],
+	modules: ['@bikariya/image-viewer', '@bikariya/modals', '@bikariya/shiki', '@nuxt/a11y', '@nuxt/content', '@nuxt/fonts', '@nuxt/hints', '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-jsonld', 'nuxt-llms', 'unplugin-yaml/nuxt'],
 
 	fonts: {
 		provider: 'bunny',

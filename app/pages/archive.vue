@@ -5,6 +5,7 @@ import { sumBy } from 'es-toolkit/math'
 import { mapValues } from 'es-toolkit/object'
 
 const appConfig = useAppConfig()
+const route = useRoute()
 useSeoMeta({
 	title: '归档',
 	description: `这里是${appConfig.title}的所有文章归档聚合页面。灯火不休时(dhbxs)的博客中的归档页面，记录前端与后端开发的技术笔记、实战经验与学习心得，分享编程日常与个人思考。一名开发者的技术成长之路，持续更新Web开发、代码优化与生活随笔。`,
@@ -45,6 +46,32 @@ function getArticleYear(article: ArticleProps) {
 		return ''
 	}
 }
+
+const cleanUrl = appConfig.url.endsWith('/') ? appConfig.url.slice(0, -1) : appConfig.url
+
+useJsonld(() => ({
+   '@context': 'https://schema.org',
+   '@type': 'WebPage',
+   'name': `${'归档' + ' | ' + appConfig.title}`,
+   'description': `这里是${appConfig.title}的所有文章归档聚合页面。灯火不休时(dhbxs)的博客中的归档页面，记录前端与后端开发的技术笔记、实战经验与学习心得，分享编程日常与个人思考。一名开发者的技术成长之路，持续更新Web开发、代码优化与生活随笔。`,
+   'author': {
+      '@type': 'Person',
+      'name': `${appConfig.author.name}`,
+   },
+   'publisher': {
+      '@type': 'Organization',
+      'name': `${appConfig.title}`,
+      'logo': {
+         '@type': 'ImageObject',
+         'url': `${appConfig.favicon}`,
+      },
+   },
+   'url': `${new URL(cleanUrl + route.path)}`,
+   "isPartOf": {
+      "@type": "WebSite",
+      "url": `${appConfig.url}`
+   }
+}))
 </script>
 
 <template>

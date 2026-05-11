@@ -11,6 +11,35 @@ useSeoMeta({
 	ogImage: image,
 })
 
+const route = useRoute()
+
+const cleanUrl = appConfig.url.endsWith('/') ? appConfig.url.slice(0, -1) : appConfig.url
+  
+useJsonld(() => ({
+   '@context': 'https://schema.org',
+   '@type': 'WebPage',
+   'name': `${title + ' | ' + appConfig.title}`,
+   'description': `${seo_description}`,
+   'author': {
+      '@type': 'Person',
+      'name': `${appConfig.author.name}`,
+   },
+   'publisher': {
+      '@type': 'Organization',
+      'name': `${appConfig.title}`,
+      'logo': {
+         '@type': 'ImageObject',
+         'url': `${appConfig.favicon}`,
+      },
+   },
+   'image': 'https://file.dhbxs.top/2025/10/hoaueqzs.avif',
+   'url': `${new URL(cleanUrl + route.path)}`,
+   "isPartOf": {
+      "@type": "WebSite",
+      "url": `${appConfig.url}`
+   }
+}))
+
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
