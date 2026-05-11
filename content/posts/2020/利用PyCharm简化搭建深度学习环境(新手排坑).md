@@ -2,7 +2,7 @@
 title: 利用PyCharm简化搭建深度学习环境(新手排坑)
 description: 在Windows 10上使用PyCharm搭建深度学习环境，包括基于Anaconda创建环境、使用清华/阿里镜像安装TensorFlow 2.3.1和Keras 2.4.3、解决DLL加载问题。针对GPU加速，安装CUDA 10.1和cuDNN 7.6并配置环境变量，验证GPU调用，附有常用pip命令速查表。
 date: 2020-10-06 11:18:24
-updated: 2020-10-06 11:18:24
+updated: 2026-05-11 11:12:04
 image: https://file.dhbxs.top/2025/10/sukseffe.webp
 permalink: /posts/37561f92
 categories: [技术]

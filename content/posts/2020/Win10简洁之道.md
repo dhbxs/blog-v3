@@ -2,7 +2,7 @@
 title: Win10简洁之道
 description: Windows 用户打造纯净高效系统的完整指南，涵盖纯净系统安装、浏览器选择、系统安全设置、常用工具推荐（压缩、搜索、下载、卸载软件）及微软办公套件使用等内容，旨在帮助用户远离流氓软件侵扰，提升系统稳定性和工作效率。
 date: 2020-03-31 11:12:04
-updated: 2020-03-31 11:12:04
+updated: 2026-05-11 11:12:04
 image: https://file.dhbxs.top/2025/10/vmktqilh.webp
 permalink: /posts/fc1be4e5
 type: story

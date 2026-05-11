@@ -2,7 +2,7 @@
 title: Hadoop集群搭建（1主2从）
 description: 详细记录了在macOS Big Sur上使用VMware Fusion搭建三节点Hadoop 2.7.7集群的全过程，包括CentOS 7最小化安装、固定IP配置、SSH免密登录、Hadoop核心配置文件修改及集群启动验证，并扩展部署Spark 3.1.1，形成完整大数据环境。
 date: 2024-04-18 06:26:21
-updated: 2024-04-18 06:26:21
+updated: 2026-05-11 11:12:04
 image: https://file.dhbxs.top/2025/10/ioyknzke.png
 permalink: /posts/d06540f2
 categories: [技术]

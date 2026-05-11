@@ -2,7 +2,7 @@
 title: NPM包管理工具的幻影依赖问题
 description: 随着前端工程化的不断完善，各种包管理工具和构建工具也越来越多。在Node生态里，绕不开NPM，Yarn，PNPM这些包管理工具，但是项目中一般都是用PNPM包管理工具而不用NPM，有一部分原因就是因为NPM包管理工具容易产生幻影依赖的问题。
 date: 2024-08-27 05:56:13
-updated: 2024-08-27 05:56:13
+updated: 2026-05-11 11:12:04
 image: # 封面图推荐 2:1，不含与标题重复的文字
 permalink: /posts/8a960ce
 categories: [技术]
