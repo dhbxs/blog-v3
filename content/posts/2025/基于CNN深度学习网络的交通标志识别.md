@@ -4,7 +4,7 @@ description: 基于CNN深度学习的交通标志识别系统，采用TensorFlow
 date: 2025-11-01 12:37:11
 updated: 2025-11-01 12:37:11
 image: https://file.dhbxs.top/2025/10/ybfbhwfk.webp
-permalink: /posts/4dCtXKfh
+permalink: /posts/cnn-traffic-sign-recognition
 categories: [开发]
 tags: [深度学习, CNN]
 recommend: 1

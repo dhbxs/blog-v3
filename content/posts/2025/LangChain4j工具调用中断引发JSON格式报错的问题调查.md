@@ -4,7 +4,7 @@ description: "本文记录了在使用LangChain4j集成AI服务时遇到的400�
 date: 2025-11-01 16:37:52
 updated: 2025-11-01 16:37:52
 image: https://file.dhbxs.top/2025/11/hhaqfien.webp
-permalink: /posts/4c27c0e
+permalink: /posts/langchain4j-tool-call-json-error
 categories: [开发]
 tags: [AI应用开发, LLM, LangChain4j]
 recommend: 2

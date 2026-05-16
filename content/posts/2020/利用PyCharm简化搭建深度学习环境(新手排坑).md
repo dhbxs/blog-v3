@@ -4,7 +4,7 @@ description: 在Windows 10上使用PyCharm搭建深度学习环境，包括基�
 date: 2020-10-06 11:18:24
 updated: 2026-05-11 11:12:04
 image: https://file.dhbxs.top/2025/10/sukseffe.webp
-permalink: /posts/37561f92
+permalink: /posts/pycharm-deep-learning-setup
 categories: [技术]
 tags: [深度学习, PyCharm]
 recommend: 0

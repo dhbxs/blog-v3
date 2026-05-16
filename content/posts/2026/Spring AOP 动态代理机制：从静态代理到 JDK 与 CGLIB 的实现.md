@@ -4,7 +4,7 @@ description: 用日志和业务逻辑解耦的案例，从静态代理的手动�
 date: 2026-04-20 11:18:07
 updated: 2026-04-23 22:43:00
 image: https://file.dhbxs.top/blog_img/1776615019347_dtdl.webp
-permalink: /posts/370adf0
+permalink: /posts/spring-aop-dynamic-proxy
 categories: [技术]
 tags: [Spring, Java]
 recommend: 5

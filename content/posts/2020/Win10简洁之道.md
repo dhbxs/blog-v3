@@ -4,7 +4,7 @@ description: Windows 用户打造纯净高效系统的完整指南，涵盖纯�
 date: 2020-03-31 11:12:04
 updated: 2026-05-11 11:12:04
 image: https://file.dhbxs.top/2025/10/vmktqilh.webp
-permalink: /posts/fc1be4e5
+permalink: /posts/win10-clean-setup
 type: story
 categories: [杂谈]
 tags: [win10]

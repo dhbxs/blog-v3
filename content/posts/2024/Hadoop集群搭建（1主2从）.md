@@ -4,7 +4,7 @@ description: 详细记录了在macOS Big Sur上使用VMware Fusion搭建三节�
 date: 2024-04-18 06:26:21
 updated: 2026-05-11 11:12:04
 image: https://file.dhbxs.top/2025/10/ioyknzke.png
-permalink: /posts/d06540f2
+permalink: /posts/hadoop-cluster-setup
 categories: [技术]
 tags: [Hadoop, 大数据与云计算]
 recommend: 0

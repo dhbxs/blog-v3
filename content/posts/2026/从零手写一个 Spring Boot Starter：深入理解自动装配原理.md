@@ -4,7 +4,7 @@ description: 一篇关于如何开发自定义 Spring Boot Starter 的技术教�
 date: 2026-04-09 07:13:41
 updated: 2026-04-09 07:13:41
 image: https://file.dhbxs.top/2026/04/csoexczb.webp
-permalink: /posts/7dc99e0
+permalink: /posts/spring-boot-starter-diy
 categories: [开发]
 tags: [SpringBoot, Java]
 recommend: 4

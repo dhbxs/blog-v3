@@ -4,7 +4,7 @@ description: 重复造轮子之实现一个简易的RPC框架，包含服务提�
 date: 2026-05-02 15:00:00
 updated: 2026-05-02 15:02:00
 image: https://file.dhbxs.top/blog_img/1777041101667_20260424.webp
-permalink: /posts/39924a5
+permalink: /posts/simple-rpc-framework
 categories: [技术]
 tags: [RPC, Java]
 recommend: 0

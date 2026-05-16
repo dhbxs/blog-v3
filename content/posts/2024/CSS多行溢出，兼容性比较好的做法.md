@@ -4,7 +4,7 @@ description: 原生css提供的做法在兼容性上做的不太好，FireFox或
 date: 2024-08-02 05:52:01
 updated: 2026-05-11 11:12:04
 image: # 封面图推荐 2:1，不含与标题重复的文字
-permalink: /posts/d2e7adb
+permalink: /posts/css-multiline-overflow
 categories: [开发]
 tags: [CSS]
 recommend: 0

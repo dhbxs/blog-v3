@@ -4,7 +4,7 @@ description: 随着前端工程化的不断完善，各种包管理工具和构�
 date: 2024-08-27 05:56:13
 updated: 2026-05-11 11:12:04
 image: # 封面图推荐 2:1，不含与标题重复的文字
-permalink: /posts/8a960ce
+permalink: /posts/npm-phantom-dependencies
 categories: [技术]
 tags: [Node.js]
 recommend: 0
