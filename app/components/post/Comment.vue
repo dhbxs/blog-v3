@@ -63,16 +63,19 @@ function confirmOpen() {
 
 onMounted(() => {
 	if (showArtalk.value) {
+		console.error('color-mode', colorMode.preference === 'dark')
 		artalk = Artalk.init({
 			el: el.value, // 挂载的 DOM 元素
 			pageKey: route.path, // 固定链接
 			pageTitle: document.title, // 页面标题
 			server: appConfig.artalk?.server, // 后端地址
 			site: appConfig.title, // 站点名
-			darkMode: colorMode.preference === 'dark',
 		})
 		artalk.on('mounted', () => {
 			loaded.value = true
+			nextTick(() => {
+				artalk.setDarkMode(colorMode.preference === 'dark')
+			})
 		})
 		artalk.on('list-failed', () => {
 			console.error('评论加载错误')
