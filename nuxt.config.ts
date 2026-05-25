@@ -263,7 +263,7 @@ ${packageJson.homepage}
 	},
 
 	ogImage: {
-		enabled: true,
+		enabled: false,
 	},
 
 	robots: {

@@ -1,12 +1,13 @@
 {
   "name": "clarity",
   "type": "module",
-  "version": "3.7.0-alpha.2",
+  "version": "3.7.0-rc.0",
   "private": true,
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@11.0.4",
+  "license": "(MIT OR CC-BY-NC-SA-4.0)",
   "homepage": "https://github.com/L33Z22L11/blog-v3",
   "engines": {
-    "node": ">=22.18 <23 || >=23.6 <24 || >=24",
+    "node": "^22.18 || ^23.6 || >=24",
     "pnpm": ">=10"
   },
   "scripts": {
@@ -53,6 +54,7 @@
     "nuxt": "catalog:framework",
     "nuxt-jsonld": "catalog:util",
     "parse-domain": "catalog:util",
+    "pinia": "catalog:framework",
     "plain-shiki": "catalog:content",
     "shiki": "catalog:content",
     "site-config-stack": "catalog:util",

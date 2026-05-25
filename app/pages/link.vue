@@ -8,8 +8,8 @@ const route = useRoute()
 layoutStore.setAside([])
 
 const { data: postLink } = await useAsyncData(
-	'/link',
-	() => queryCollection('link').path('/link').first(),
+	'content:/link',
+	() => queryCollection('content').path('/link').first(),
 )
 
 useSeoMeta({
