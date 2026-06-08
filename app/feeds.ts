@@ -150,6 +150,17 @@ export default [
 				date: '2026-05-01',
 				comment: '前端工程师，博客主题很亮眼',
 			},
+			{
+				author: '素心 | SUXIN',
+				desc: '学习网络知识、积累兴趣的地方。',
+				link: 'https://haiy.space',
+				feed: 'https://haiy.space/rss.xml',
+				icon: 'https://haiy.space/uploads/images/2026/05/04ea5fddc86ae2ca.jpg',
+				avatar: 'https://haiy.space/uploads/images/2026/05/04ea5fddc86ae2ca.jpg',
+				archs: ['虚拟主机'],
+				date: '2026-05-26',
+				comment: '前端、后端、移动端、AI Agent独立开发者',
+			},
 		],
 	},
 	// #endregion
