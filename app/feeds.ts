@@ -161,6 +161,17 @@ export default [
 				date: '2026-05-26',
 				comment: '前端、后端、移动端、AI Agent独立开发者',
 			},
+			{
+				author: '洪畅的博客',
+				desc: '想，全是问题；做，才有答案。',
+				link: 'https://blog.hcbu.cn/',
+				feed: 'https://blog.hcbu.cn/atom.xml',
+				icon: 'https://gitee.com/hcbug/picture1/raw/master/20260607223324364.webp',
+				avatar: 'https://gitee.com/hcbug/picture1/raw/master/20260607223324364.webp',
+				archs: ['Nuxt', 'Vercel'],
+				date: '2026-07-07',
+				comment: '同样使用 Clarity 主题的博主',
+			},
 		],
 	},
 	// #endregion
