@@ -7,8 +7,8 @@ settings:
 catalogs:
   comment:
     artalk:
-      specifier: ^2.9.1
-      version: 2.9.1
+      specifier: ^2.10.0
+      version: 2.10.0
   content:
     '@bikariya/shiki':
       specifier: ^0.0.8
@@ -256,7 +256,7 @@ importers:
         version: 6.6.3
       artalk:
         specifier: catalog:comment
-        version: 2.9.1(marked@17.0.6)
+        version: 2.10.0(marked@17.0.6)
       ci-info:
         specifier: catalog:framework
         version: 4.4.0
@@ -3362,6 +3362,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@unhead/bundler@3.1.0':
     resolution: {integrity: sha512-PzIa26mo1fk2t3KJ6ACJXTi1MD1nDJXb4hl/P8+UTMmdK0EWyDo3LMttePsIgKKR5PTnrtSeyhd43Pdoym4z2g==}
@@ -3710,10 +3711,10 @@ packages:
   array-timsort@1.0.3:
     resolution: {integrity: sha512-/+3GRL7dDAGEfM6TseQk/U+mi18TU2Ms9I3UlLdUMhz2hbvGNTKdj9xniwXfUqgYhHxRx0+8UnKkvlNwVU+cWQ==}
 
-  artalk@2.9.1:
-    resolution: {integrity: sha512-IFo9XqWDalsHy8BsmMA5SSB9bozBa/sBhTm/+O5KwA6DnC95lFKv7C6ScMx/Xa4ue5qSQ7VV5vxRgCh/raohkQ==}
+  artalk@2.10.0:
+    resolution: {integrity: sha512-vDMx/DnhV/8zGJJRgvnNEIIGFKRD5LEuEKubKYLF4Q0nMe3aKIOn+Hj/WsyRtAogfeGghrQXKoieYXRfwJyliw==}
     peerDependencies:
-      marked: ^14.1.0
+      marked: ^18.0.7
 
   ast-kit@2.2.0:
     resolution: {integrity: sha512-m1Q/RaVOnTp9JxPX+F+Zn7IcLYMzM8kZofDImfsKZd8MbR+ikdOzTeztStWqfrqIxZnYWryyI9ePm3NGjnZgGw==}
@@ -11632,7 +11633,7 @@ snapshots:
 
   array-timsort@1.0.3: {}
 
-  artalk@2.9.1(marked@17.0.6):
+  artalk@2.10.0(marked@17.0.6):
     dependencies:
       marked: 17.0.6
 
