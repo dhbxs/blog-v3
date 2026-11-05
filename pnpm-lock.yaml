@@ -7,8 +7,8 @@ settings:
 catalogs:
   comment:
     artalk:
-      specifier: ^2.10.0
-      version: 2.10.0
+      specifier: ^2.10.1
+      version: 2.10.1
   content:
     '@bikariya/shiki':
       specifier: ^0.0.8
@@ -256,7 +256,7 @@ importers:
         version: 6.6.3
       artalk:
         specifier: catalog:comment
-        version: 2.10.0(marked@17.0.6)
+        version: 2.10.1(marked@17.0.6)
       ci-info:
         specifier: catalog:framework
         version: 4.4.0
@@ -3711,8 +3711,8 @@ packages:
   array-timsort@1.0.3:
     resolution: {integrity: sha512-/+3GRL7dDAGEfM6TseQk/U+mi18TU2Ms9I3UlLdUMhz2hbvGNTKdj9xniwXfUqgYhHxRx0+8UnKkvlNwVU+cWQ==}
 
-  artalk@2.10.0:
-    resolution: {integrity: sha512-vDMx/DnhV/8zGJJRgvnNEIIGFKRD5LEuEKubKYLF4Q0nMe3aKIOn+Hj/WsyRtAogfeGghrQXKoieYXRfwJyliw==}
+  artalk@2.10.1:
+    resolution: {integrity: sha512-Ym1KVKMq3tJz+V21k0IK4ljVEsQN0i9QBgNnJ1FIFDUpiLlKZpjmXY9K4JCC2tBOOK6v2y/Y1CJyy/tnFb9NSA==}
     peerDependencies:
       marked: ^18.0.7
 
@@ -11633,7 +11633,7 @@ snapshots:
 
   array-timsort@1.0.3: {}
 
-  artalk@2.10.0(marked@17.0.6):
+  artalk@2.10.1(marked@17.0.6):
     dependencies:
       marked: 17.0.6
 
