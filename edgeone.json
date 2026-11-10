@@ -21,9 +21,144 @@
   ],
   "redirects": [
     {
-      "destination": "https://www.zhilu.site/api/icon",
-      "source": "/favicon.ico",
-      "status": 308
+      "source": "/archives/3kM1b0UL",
+      "destination": "/posts/langchain4j-tool-call-json-error",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/4dCtXKfh",
+      "destination": "/posts/cnn-traffic-sign-recognition",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/d06540f2",
+      "destination": "/posts/hadoop-cluster-setup",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/37561f92",
+      "destination": "/posts/pycharm-deep-learning-setup",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/P7WqPho9",
+      "destination": "/posts/P7WqPho9",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/fc1be4e5",
+      "destination": "/posts/win10-clean-setup",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/2d35e3e5",
+      "destination": "/posts/stack-and-queue",
+      "statusCode": 301
+    },
+    {
+      "source": "/friends",
+      "destination": "/link",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/2/",
+      "destination": "/?page=2",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/5/",
+      "destination": "/?page=5",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/2025",
+      "destination": "/archive",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/2021/04/",
+      "destination": "/archive",
+      "statusCode": 301
+    },
+    {
+      "source": "/archives/2021/01/",
+      "destination": "/archive",
+      "statusCode": 301
+    },
+    {
+      "source": "/categories/aiying-yong-kai-fa",
+      "destination": "/archive",
+      "statusCode": 301
+    },
+    {
+      "source": "/moments",
+      "destination": "/memo",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/8a960ce",
+      "destination": "/posts/npm-phantom-dependencies",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/d06540f2",
+      "destination": "/posts/hadoop-cluster-setup",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/d2e7adb",
+      "destination": "/posts/css-multiline-overflow",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/2d35e3e5",
+      "destination": "/posts/stack-and-queue",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/f8c33218",
+      "destination": "/posts/sequential-list-crud",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/37561f92",
+      "destination": "/posts/pycharm-deep-learning-setup",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/fc1be4e5",
+      "destination": "/posts/win10-clean-setup",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/39924a5",
+      "destination": "/posts/simple-rpc-framework",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/370adf0",
+      "destination": "/posts/spring-aop-dynamic-proxy",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/b0439536",
+      "destination": "/posts/strategy-pattern-refactor",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/7dc99e0",
+      "destination": "/posts/spring-boot-starter-diy",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/4dCtXKfh",
+      "destination": "/posts/cnn-traffic-sign-recognition",
+      "statusCode": 301
+    },
+    {
+      "source": "/posts/4c27c0e",
+      "destination": "/posts/langchain4j-tool-call-json-error",
+      "statusCode": 301
     }
   ]
 }

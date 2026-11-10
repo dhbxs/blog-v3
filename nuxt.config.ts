@@ -7,7 +7,6 @@ import { mapValues } from 'es-toolkit/object'
 import { pascalCase } from 'es-toolkit/string'
 import { Temporal } from 'temporal-polyfill'
 import blogConfig from './blog.config'
-import oldBLogRedirectList from './old-blog-redirects.json'
 import packageJson from './package.json'
 import redirectList from './redirects.json'
 
@@ -86,11 +85,9 @@ export default defineNuxtConfig({
 
 	// @keep-sorted
 	routeRules: {
-		...mapValues(oldBLogRedirectList, to => ({ redirect: { to, statusCode: 301 as const } })),
 		...mapValues(redirectList, to => ({ redirect: { to, statusCode: 308 as const } })),
 		'/api/stats': { prerender: true, headers: { 'Content-Type': 'application/json' } },
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
-		'/favicon.ico': { redirect: { to: blogConfig.favicon } },
 		'/zhilu.opml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 	},
 
