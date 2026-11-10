@@ -27,30 +27,6 @@ const listRecommended = computed(() => orderBy(
 	['desc'],
 ))
 
-useJsonld(() => ({
-		'@context': 'https://schema.org',
-		'@type': 'WebSite',
-		'mainEntityOfPage': {
-			'@type': 'WebPage',
-			'@id': `${appConfig.url}`,
-		},
-		'name': `${appConfig.title + '-' + appConfig.subtitle}`,
-		'description': `${appConfig.description}`,
-		'author': {
-			'@type': 'Person',
-			'name': `${appConfig.author.name}`,
-		},
-		'publisher': {
-			'@type': 'Organization',
-			'name': `${appConfig.title}`,
-			'logo': {
-				'@type': 'ImageObject',
-				'url': `${appConfig.favicon}`,
-			},
-		},
-		'image': 'https://file.dhbxs.top/2025/10/hoaueqzs.avif',
-		'url': `${appConfig.url}`,
-	}))
 const { data: previewCount } = useAsyncData(
 	'previews:count',
 	() => queryCollection('content').where('stem', 'LIKE', 'previews/%').count(),

@@ -140,7 +140,7 @@ export default defineNuxtConfig({
 	},
 
 	// @keep-sorted
-	modules: ['@bikariya/image-viewer', '@bikariya/modals', '@bikariya/shiki', '@nuxt/a11y', '@nuxt/content', '@nuxt/fonts', '@nuxt/hints', '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-jsonld', 'nuxt-llms', 'unplugin-yaml/nuxt'],
+	modules: ['@bikariya/image-viewer', '@bikariya/modals', '@bikariya/shiki', '@nuxt/a11y', '@nuxt/content', '@nuxt/fonts', '@nuxt/hints', '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', 'nuxt-llms', 'unplugin-yaml/nuxt'],
 
 	fonts: {
 		provider: 'bunny',

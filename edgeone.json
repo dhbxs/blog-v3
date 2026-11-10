@@ -31,6 +31,11 @@
       "statusCode": 301
     },
     {
+      "source": "/archives/4dctxkfh",
+      "destination": "/posts/cnn-traffic-sign-recognition",
+      "statusCode": 301
+    },
+    {
       "source": "/archives/d06540f2",
       "destination": "/posts/hadoop-cluster-setup",
       "statusCode": 301

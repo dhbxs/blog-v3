@@ -52,7 +52,6 @@
     "es-toolkit": "catalog:util",
     "minisearch": "catalog:util",
     "nuxt": "catalog:framework",
-    "nuxt-jsonld": "catalog:util",
     "parse-domain": "catalog:util",
     "pinia": "catalog:framework",
     "plain-shiki": "catalog:content",
