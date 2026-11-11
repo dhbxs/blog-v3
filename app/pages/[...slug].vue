@@ -17,6 +17,7 @@ if (post.value) {
 		ogType: 'article',
 		ogImage: post.value.image,
 		description: post.value.description,
+		keywords: post.value.tags?.join(', '),
 	})
 	layoutStore.setAside(post.value.meta?.aside as WidgetName[] | undefined)
 }
